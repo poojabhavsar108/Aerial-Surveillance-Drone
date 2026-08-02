@@ -232,32 +232,25 @@ The ESP32-CAM mounted underneath the drone captures a live downward-facing aeria
 
 ---
 
-## 🚀 Future Improvements
-
-The following enhancements can further improve the project:
-
-- Improve camera frame rate and reduce streaming latency.
-- Add autonomous waypoint navigation using GPS.
-- Integrate obstacle detection and avoidance.
-- Increase communication range using long-range wireless technologies.
-- Develop a dedicated mobile application for remote monitoring.
-- Add onboard image processing and AI-based object detection.
-
----
-
 ## 📚 Learning Outcomes
 
 Through this project, I gained practical experience in:
 
-- Drone system integration
-- Embedded systems programming
-- ESP32-CAM configuration
-- GPS interfacing using NEO-6M
-- IoT-based wireless communication
-- Hardware integration and debugging
-- Power management using LM2596
-- Web-based dashboard development
-- Prototype design, testing, and validation
+- Drone hardware assembly and integration
+- Working with the ESP32-CAM and NEO-6M GPS module
+- Basic wireless video streaming
+- Prototype testing and debugging
+- Understanding the integration of multiple embedded hardware modules
+
+---
+
+## 🚀 Future Improvements
+
+Possible future improvements include:
+
+- Improve camera streaming performance and reduce latency.
+- Enhance GPS tracking accuracy and dashboard functionality.
+- Optimize power management for longer flight time.
 
 ---
 
