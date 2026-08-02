@@ -5,10 +5,11 @@
 ![GPS](https://img.shields.io/badge/GPS-NEO--6M-orange)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
+## ⭐ Project Overview
+
 An IoT-based **Aerial Surveillance Drone** developed to demonstrate **real-time wireless video streaming** and **GPS-based location tracking** using an **ESP32-CAM** and **NEO-6M GPS module**.
 
-The project integrates a quadcopter platform with an onboard camera and GPS module, enabling users to monitor the surrounding environment through a live video feed while simultaneously viewing the drone's real-time location. A web-based dashboard running on the ESP32-CAM displays the camera stream, GPS coordinates, telemetry information, and a direct Google Maps link for location visualization.
-
+The project integrates a quadcopter platform with an onboard camera and GPS module, enabling users to monitor the surrounding environment through a live video feed while simultaneously viewing the drone's real-time location. The integrated software provides a web-based interface for viewing the live camera stream and GPS information.
 This project was developed to explore the integration of embedded systems, wireless communication, IoT, and drone technology for surveillance applications.
 
 ---
@@ -183,7 +184,7 @@ The drone was successfully tested for take-off, hovering, and controlled flight 
 
 📹 **Flight Demonstration**
 
-*(Videos/Flight_Demonstration (1).mp4)*
+*(Videos/Flight_Demonstration.mp4)*
 
 ---
 
@@ -268,7 +269,7 @@ I sincerely thank my college, faculty members, and mentors for their continuous 
 
 Electronics and Communication Engineering Student
 
-Passionate about Embedded Systems, VLSI, Digital Design, and IoT.
+Interested in VLSI,  Embedded Systems, and Digital Design.
 
 ---
 
