@@ -24,7 +24,7 @@ This project was developed to explore the integration of embedded systems, wirel
 - ✔️ Flight control using KK2.1.5 Flight Controller
 - ✔️ Stable power supply using LM2596 Buck Converter and Arduino Uno
 - ✔️ Modular software architecture with separate camera testing and integrated system code
-- ✔️ Prototype successfully demonstrated with flight and live camera streaming
+- ✔️ Prototype successfully demonstrated with flight, live camera streaming, and GPS location tracking
 
 ---
 
@@ -71,7 +71,9 @@ The Aerial Surveillance Drone consists of two major subsystems:
 - **Flight Control System** – Responsible for maintaining stable flight and controlling the drone's movement.
 - **Surveillance System** – Responsible for live video streaming and real-time GPS tracking.
 
-The RF transmitter sends control commands to the KK2.1.5 Flight Controller, which stabilizes the quadcopter and controls the BLDC motors through the Electronic Speed Controllers (ESCs). An ESP32-CAM mounted on the drone captures live video and streams it wirelessly over Wi-Fi. Simultaneously, the NEO-6M GPS module continuously acquires the drone's geographical coordinates and the ESP32-CAM receives GPS data from the NEO-6M module and makes the latitude, longitude, and Google Maps link available through the same web interface used for camera streaming.
+The RF transmitter sends control commands to the KK2.1.5 Flight Controller, which stabilizes the quadcopter and controls the BLDC motors through the Electronic Speed Controllers (ESCs). An ESP32-CAM mounted on the drone captures live video and streams it wirelessly over Wi-Fi. Simultaneously, the NEO-6M GPS module continuously acquires the drone's geographical coordinates. The ESP32-CAM receives this GPS data through UART and provides the latitude, longitude, and Google Maps link through the same web interface used for live camera streaming.
+
+---
 
 ### System Block Diagram
 
@@ -214,6 +216,8 @@ Through this project, I gained practical experience in:
 ## 📂 Repository Structure
 
 ```text
+
+---
 Aerial-Surveillance-Drone/
 │
 ├── Hardware/
