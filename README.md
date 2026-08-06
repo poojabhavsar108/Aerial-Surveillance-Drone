@@ -118,47 +118,6 @@ This integration enables the drone to perform basic aerial surveillance while pr
 
 ---
 
-## 📂 Repository Structure
-
-```text
-Aerial-Surveillance-Drone/
-│
-├── Hardware/
-│   ├── Block_diagram.png
-│   ├── Components_Used.png
-│   └── Software_Flowchart.png
-│
-├── Images/
-│   ├── Drone_Prototype_1.png
-│   ├── Drone_Prototype_2.jpg
-│   └── GPS_Demonstration.jpg
-│
-├── Software/
-│   ├── Camera_Test/
-│   │   └── CameraWebServer.ino
-│   │
-│   └── Final_Integrated_System/
-│       └── ESP32_CAM_GPS_System.ino
-│
-├── Videos/
-│   ├── Flight_Demonstration.mp4
-│   └── Camera_Stream_Demonstration.mp4
-│
-├── README.md
-└── LICENSE
-```
-
-### Repository Contents
-
-- **Hardware/** – System block diagram, software flowchart and hardware components used.
-- **Images/** – Prototype photographs and GPS demonstration images.
-- **Software/** – ESP32-CAM camera testing code and the final integrated Camera + GPS system.
-- **Videos/** – Drone flight demonstration and live camera streaming demonstration.
-- **README.md** – Complete project documentation.
-- **LICENSE** – Open-source project license.
-
----
-
 ## 📸 Project Demonstration
 
 ### Drone Prototype
@@ -249,6 +208,48 @@ Through this project, I gained practical experience in:
 - Basic wireless video streaming
 - Prototype testing and debugging
 - Understanding the integration of multiple embedded hardware modules
+
+---
+
+## 📂 Repository Structure
+
+```text
+Aerial-Surveillance-Drone/
+│
+├── Hardware/
+│   ├── Block_diagram.png
+│   ├── Components_Used.png
+│   └── Software_Flowchart.png
+│
+├── Images/
+│   ├── Drone_Prototype_1.png
+│   └── Drone_Prototype_2.jpg
+│
+├── Software/
+│   ├── Camera_Test/
+│   │   └── CameraWebServer.ino
+│   │
+│   └── Final_Integrated_System/
+│       └── ESP32_CAM_GPS_System.ino
+│
+├── Videos/
+│   ├── Flight_Demonstration.mp4
+│   ├── Camera_Stream_Demonstration.mp4
+│   └── GPS_Demonstration.mp4
+│
+├── README.md
+└── LICENSE
+
+```
+
+### Repository Contents
+
+- **Hardware/** – Contains the system block diagram, software flowchart, and detailed overview of the hardware components used.
+- **Images/** – Contains photographs of the developed drone prototype.
+- **Software/** – Contains the ESP32-CAM camera test program and the final integrated camera and GPS program.
+- **Videos/** – Contains the drone flight, ESP32-CAM live streaming, and GPS location demonstrations.
+- **README.md** – Provides complete documentation of the project, its architecture, working, software, and demonstrations.
+- **LICENSE** – Contains the MIT License for the repository.
 
 ---
 
