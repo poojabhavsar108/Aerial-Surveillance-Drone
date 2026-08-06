@@ -9,7 +9,8 @@
 
 An IoT-based **Aerial Surveillance Drone** developed to demonstrate **real-time wireless video streaming** and **GPS-based location tracking** using an **ESP32-CAM** and **NEO-6M GPS module**.
 
-The project integrates a quadcopter platform with an onboard camera and GPS module, enabling users to monitor the surrounding environment through a live video feed while simultaneously viewing the drone's real-time location. The integrated software provides a web-based interface for viewing the live camera stream and GPS information.
+The project integrates a quadcopter platform with an onboard camera and GPS module, enabling users to monitor the surrounding environment through a live video feed while simultaneously viewing the drone's real-time location. The integrated software provides a web-based interface containing the live camera stream and a GPS location button. When a valid GPS fix is available, the interface displays the latitude, longitude, and a direct Google Maps link.
+
 This project was developed to explore the integration of embedded systems, wireless communication, IoT, and drone technology for surveillance applications.
 
 ---
@@ -18,8 +19,8 @@ This project was developed to explore the integration of embedded systems, wirel
 
 - ✔️ Live video streaming using ESP32-CAM over Wi-Fi
 - ✔️ Real-time GPS location tracking using NEO-6M
-- ✔️ Interactive web dashboard displaying camera feed and GPS telemetry
-- ✔️ Google Maps integration for live drone location
+- ✔️ Web interface combining the camera stream and GPS location
+- ✔️ Latitude and longitude display with direct Google Maps integration
 - ✔️ Flight control using KK2.1.5 Flight Controller
 - ✔️ Stable power supply using LM2596 Buck Converter and Arduino Uno
 - ✔️ Modular software architecture with separate camera testing and integrated system code
@@ -34,7 +35,7 @@ The primary objectives of this project are:
 - Develop a quadcopter capable of performing basic aerial surveillance.
 - Implement real-time live video streaming using the ESP32-CAM module.
 - Integrate the NEO-6M GPS module to provide the drone's current geographical location.
-- Design a web-based dashboard to display live video, GPS coordinates, and telemetry information.
+- Develop a web-based interface to display the live camera stream and GPS coordinates.
 - Enable users to locate the drone through direct Google Maps integration.
 - Gain practical experience in integrating embedded hardware, wireless communication, and IoT technologies into a complete working system.
 
@@ -51,7 +52,7 @@ The primary objectives of this project are:
 | FS-CT6B Transmitter & Receiver | Wireless flight control |
 | ESP32-CAM | Live video streaming over Wi-Fi |
 | NEO-6M GPS Module | Real-time location tracking |
-| Arduino Uno | Stable power supply and module interfacing |
+| Arduino Uno | Provides a stable 5 V power supply to the surveillance modules |
 | LM2596 Buck Converter | Voltage regulation |
 | 3S Li-Po Battery | Power source for the drone |
 
@@ -70,7 +71,7 @@ The Aerial Surveillance Drone consists of two major subsystems:
 - **Flight Control System** – Responsible for maintaining stable flight and controlling the drone's movement.
 - **Surveillance System** – Responsible for live video streaming and real-time GPS tracking.
 
-The RF transmitter sends control commands to the KK2.1.5 Flight Controller, which stabilizes the quadcopter and controls the BLDC motors through the Electronic Speed Controllers (ESCs). An ESP32-CAM mounted on the drone captures live video and streams it wirelessly over Wi-Fi. Simultaneously, the NEO-6M GPS module continuously acquires the drone's geographical coordinates and transmits them to the web dashboard, allowing users to monitor both the live video feed and the drone's location.
+The RF transmitter sends control commands to the KK2.1.5 Flight Controller, which stabilizes the quadcopter and controls the BLDC motors through the Electronic Speed Controllers (ESCs). An ESP32-CAM mounted on the drone captures live video and streams it wirelessly over Wi-Fi. Simultaneously, the NEO-6M GPS module continuously acquires the drone's geographical coordinates and the ESP32-CAM receives GPS data from the NEO-6M module and makes the latitude, longitude, and Google Maps link available through the same web interface used for camera streaming.
 
 ### System Block Diagram
 
@@ -82,7 +83,7 @@ The RF transmitter sends control commands to the KK2.1.5 Flight Controller, whic
 
 ## ⚙️ Software Workflow
 
-The embedded software initializes the ESP32-CAM and NEO-6M GPS module before connecting to a Wi-Fi network. Once connected, the ESP32-CAM continuously captures video frames while the GPS module receives satellite data and updates the drone's location. Both the live camera stream and GPS telemetry are transmitted to a web-based dashboard, enabling users to monitor the drone remotely in real time.
+The software initializes the ESP32-CAM and NEO-6M GPS module before connecting to the configured Wi-Fi network. After connection, the ESP32-CAM starts a local web server and continuously provides the live camera stream. The GPS data is decoded using TinyGPS++, and when the user selects the location button, the interface displays the available latitude, longitude, and Google Maps link.
 
 ### Software Flowchart
 
@@ -104,19 +105,14 @@ The complete working of the Aerial Surveillance Drone is described below:
 
 4. Simultaneously, the **NEO-6M GPS module** continuously receives satellite signals and provides the drone's real-time geographical coordinates to the ESP32-CAM.
 
-5. The integrated software processes both the camera feed and GPS data, creating a web-based dashboard that displays:
-   - Live video stream from the ESP32-CAM
-   - Latitude and Longitude
-   - GPS Fix Status
-   - Satellite Count
-   - Altitude
-   - Ground Speed
-   - Course (Heading)
-   - HDOP
-   - GPS Date and Time
-   - Direct Google Maps link for location tracking
+5. The integrated web interface provides:
+   - Live video streaming from the ESP32-CAM
+   - A button to request the current GPS location
+   - Latitude and longitude with six-decimal precision
+   - A direct Google Maps link
+   - A notification when a valid GPS fix is not available
 
-6. Users connected to the same Wi-Fi network can access the dashboard through a web browser to monitor both the live aerial view and the drone's current location in real time.
+6. A user connected to the same Wi-Fi network can open the ESP32-CAM IP address in a web browser, view the live camera stream, and request the drone's available GPS location.
 
 This integration enables the drone to perform basic aerial surveillance while providing location information for monitoring and tracking purposes.
 
@@ -184,7 +180,7 @@ The drone was successfully tested for take-off, hovering, and controlled flight 
 
 📹 **Flight Demonstration**
 
-*(Videos/Flight_Demonstration.mp4)*
+[View Flight Demonstration](Videos/Flight_Demonstration.mp4)
 
 ---
 
@@ -194,9 +190,20 @@ The ESP32-CAM mounted underneath the drone captures a live downward-facing aeria
 
 📹 **Camera Stream Demonstration**
 
-*(Videos/Camera_Stream_Demonstration.mp4)*
+[View Camera Stream Demonstration](Videos/Camera_Stream_Demonstration.mp4)
 
 ---
+
+### 📍 GPS Location Demonstration
+
+The NEO-6M GPS module obtains the geographical location of the drone. The latitude and longitude can be opened in Google Maps for location visualization.
+
+📹 **GPS Demonstration**
+
+[View GPS Demonstration](Videos/GPS_Demonstration.mp4)
+
+---
+
 
 ## 💻 Software and Technologies Used
 
@@ -225,7 +232,7 @@ The ESP32-CAM mounted underneath the drone captures a live downward-facing aeria
 
 - Live wireless video streaming using ESP32-CAM
 - Real-time GPS location tracking
-- Integrated Camera and GPS web dashboard
+- Integrated web interface for camera streaming and GPS location
 - Google Maps location integration
 - Stable quadcopter flight using KK2.1.5 Flight Controller
 - Modular software architecture
