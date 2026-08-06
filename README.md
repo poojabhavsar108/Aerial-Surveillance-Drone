@@ -217,7 +217,6 @@ Through this project, I gained practical experience in:
 
 ```text
 
----
 Aerial-Surveillance-Drone/
 │
 ├── Hardware/
