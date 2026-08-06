@@ -280,7 +280,7 @@ I sincerely thank my college, faculty members, and mentors for their continuous 
 
 Electronics and Communication Engineering Student
 
-Interested in VLSI,  Embedded Systems, and Digital Design.
+Interested in VLSI, Digital Design and Embedded Systems.
 
 ---
 
